@@ -4,13 +4,6 @@ import { useState } from 'react'
 import TodoList from './Todo';
 
 function App() {
-  var temp: string = "";
-  const [newtask,Settask]=useState<string[]>([])
-  const onKeyDownCallback = (ev: React.KeyboardEvent<HTMLInputElement>) => {
-    /* check pressing enter key here */
-    
-  }
-
   return (
     <div>
 
