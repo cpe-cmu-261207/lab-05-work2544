@@ -10,6 +10,7 @@ type TaskData = {
 const TodoList = () => {
 
   const [curTask, setCurTask] = useState<string>('')
+  const [textbuffer,settext]=useState<string>('')
   const [tasks, setTasks] = useState<TaskData[]>([])
   const [donetasks, setdoneTasks] = useState<TaskData[]>([])
   const onKeyDownCallback = (ev: React.KeyboardEvent<HTMLInputElement>) => {
@@ -21,7 +22,7 @@ const TodoList = () => {
   }
   const onChangeCallback = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setCurTask(ev.target.value)
-
+    settext(ev.target.value)
   }
 
   const addTask = (taskName: string) => {
@@ -34,6 +35,7 @@ const TodoList = () => {
     {
     const newTasks = [{id: newId, name: taskName},...tasks]
     setTasks(newTasks)
+    settext("")
     }
     else
     {
@@ -56,7 +58,7 @@ const TodoList = () => {
   return (
     <div >
       <div className="flex space-x-1">
-      <input className='border border-gray-400 w-full text-2xl' onChange={onChangeCallback} onKeyDown={onKeyDownCallback}></input>
+      <input className='border border-gray-400 w-full text-2xl' onChange={onChangeCallback} onKeyDown={onKeyDownCallback} value={textbuffer}></input>
       <button className='border border-gray-400 w-8 font-bold' onClick={() => addTask(curTask)}>+</button>
       </div>
       <div>
