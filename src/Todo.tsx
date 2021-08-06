@@ -36,6 +36,7 @@ const TodoList = () => {
     const newTasks = [{id: newId, name: taskName},...tasks]
     setTasks(newTasks)
     settext("")
+    setCurTask("")
     }
     else
     {
